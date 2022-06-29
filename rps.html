@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Sessior!</title>
+    <link rel="stylesheet" href="rps.css">
+</head>
+<body>
+    <main>
+        <div class="player-score hide">
+            <p>Player</p>
+            <span class="num">0</span>
+        </div>
+        <div class="comp-score hide">
+            <p>Computer</p>
+            <span class="num">0</span>
+        </div>
+        <div class="game-board">
+            <h1>Rock Paper Sessior</h1>
+            <p>A classic game - Rock, Paper, Scissors! Choose one of the three choices - and see if you can beat the computer.
+                Will you win? The chance is random!</p>
+            <button>Let's Play</button>
+        </div>
+        <div class="select-move hide">
+            <div class="choices">
+                <div class="choice" data-value="rock">
+                    <img src="imgs/rock.png" alt="">
+                    <p>Rock</p>
+                </div>
+                <div class="choice" data-value="paper">
+                    <img src="imgs/paper.png" alt="">
+                    <p>Paper</p>
+                </div>
+                <div class="choice" data-value="scissors">
+                    <img src="imgs/scissors.png" alt="">
+                    <p>Scissors</p>
+                </div>
+            </div>
+        </div>
+        <div class="play-game hide">
+            <h1 class="result"></h1>
+            <div class="container">
+                <img src="imgs/rock2.png" alt="">
+                <img src="imgs/rock.png" alt="">
+            </div>
+        </div>
+    </main>
+    <script src="rps.js"></script>
+</body>
+</html>
