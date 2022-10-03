@@ -12,26 +12,63 @@ main {
     height: 100vh;
     position: relative;
 }
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width:375px) {
+    .container {
+        width:300px;
+    }
+} 
+@media (min-width:376px) and (max-width:575px) {
+    .container {
+        width: 350px;
+    }
+}
+@media (min-width:576px)  and (max-width:767px)  {
+    .container {
+        width: 700px;
+    }
+}
+@media (min-width:768px) and (max-width:991px) { 
+    .container {
+        width:970px;
+    }
+}
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
 .game-board {
     position: absolute;
     top: 25%;
     left: 50%;
     transform: translateX(-50%);
-    width: 600px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: white;
 }
 .game-board h1 {
+    margin:0 auto;
     font-size: 50px;
     font-weight: bold;
+    width:max-content;
 }
 .game-board p {
     margin: 30px 0;
-    font-size: 20px;
+    text-align: center;
+    width: 50%;
+    font-size: 18px;
 }
 .game-board button {
-    width: 150px;
-    height: 50px;
+    width: max-content;
+    padding: 10px 20px;
     border: none;
     color: rgb(224, 224, 224);
     font-size: 20px;
@@ -44,12 +81,16 @@ main {
 .game-board button:hover {
     opacity: 1;
 }
-@media (max-width: 767px) {
-    .game-board {
-        width: 355px;
-    }
+@media (max-width:575px) {
     .game-board h1 {
-        font-size: 35px;
+        font-size: 30px;
+    }
+    .game-board p {
+        width: 100%;
+        font-size: 17px;
+    }
+    .game-board button {
+        font-size: 18px;
     }
 }
 .hide {
@@ -74,52 +115,60 @@ main {
 }
 .select-move .choices {
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: white;
     display: flex;
-    width: 780px;
+    flex-wrap: wrap;
+    gap:20px;
+    align-items: center;
+    justify-content: center;
 }
 .select-move .choices .choice {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     color: white;
     font-size: 30px;
     cursor: pointer;
+    width: 30%;
     
 }
 .select-move .choices .choice img {
-    width: 250px;
+    width: 60%;
     transform: rotate(122deg);
 }
 
-@media (max-width: 767px) {
+@media (max-width:575px) {
+    .player-score ,
+    .comp-score {
+        font-size: 20px;
+    }
     .player-score {
         left: 10%;
     }
     .comp-score {
         right: 10%;
     }
-    .select-move .choices {
-        top: 40%;
-        width: 450px;
-        gap: 20px 0px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
     .select-move .choices .choice img {
-        width: 200px;
+        width: 120%;
+    }
+    .select-move .choices .choice {
+        width: 43%;
+    }
+    .select-move .choices .choice p {
+        font-size: 18px;
     }
 }
 .play-game {
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
-    width: 600px;
     text-align: center;
     color: white;
     display: flex;
@@ -131,29 +180,24 @@ main {
     height: 40px;
     width: fit-content;
 }
-.play-game .container {
+.play-game .images {
     overflow: hidden;
-    display: flex;
-    width: 500px;
     height: 250px;
+    width: 100%;
     position: relative;
 }
-.play-game .container img {
+.play-game .images img {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
+    width: 20%;
     transition: 0.8s ease;
-
 }
-.play-game .container img:first-child {
-    left:-200px ;
+.play-game .images img:first-child {
+    left:-200px;
     transform: rotate(-30deg);
     animation: move-2 1.5s forwards , rotate-2 2.5s 1.5s forwards;
 }
-.play-game .container img:last-child {
-    right:-200px ;
+.play-game .images img:last-child {
+    right:-200px;
     transform:rotate(30deg);
     animation: move-1 1.5s forwards , rotate-1 2.5s 1.5s forwards;
 }
@@ -167,7 +211,7 @@ main {
 }
 @keyframes move-1 {
     to {
-        right: 0;
+        right: 5%;
     }
 }
 @keyframes rotate-2 {
@@ -180,17 +224,21 @@ main {
 }
 @keyframes move-2 {
     to {
-        left: 0;
+        left: 5%;
     }
 }
-@media (max-width: 767px) {
-    .play-game {
-        top: 40%;
+@media (max-width:575px) {
+    .play-game .images img {
+        width: 60%;
     }
-    .play-game .container {
-        width: 475px;
+    @keyframes move-2 {
+        to {
+            left: -10%;
+        }
     }
-    .play-game .container img {
-        width: 200px;
+    @keyframes move-1 {
+        to {
+            right: -10%;
+        }
     }
 }

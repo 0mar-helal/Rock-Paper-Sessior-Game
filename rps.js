@@ -6,7 +6,7 @@ let compScoreBoard=document.querySelector(".comp-score");
 let choices=document.querySelectorAll(".choices .choice");
 let gameStart=document.querySelector(".play-game");
 let round=document.querySelector(".play-game .result");
-let hands=document.querySelectorAll(".play-game .container img");
+let hands=document.querySelectorAll(".play-game .images img");
 let playerScore=document.querySelector(".player-score span.num");
 let compScore=document.querySelector(".comp-score span.num");
 
